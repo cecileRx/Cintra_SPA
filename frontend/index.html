@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIGUEL CINTRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+
+<body data-barba="wrapper">
+
+    <div class="main-container" data-barba="container" data-barba-namespace="home">
+      <div id="molecule">
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 500 410">
+          <image width="375" height="410" xlink:href="/static/images/molecule-total.svg"></image>
+          <a class='molecule-link about-link' href="/about" data-link>
+            <rect id="about-link" x="7" y="15" fill="#fff" opacity="0" width="100" height="100"></rect>
+            <text x="120" y="50" font-family="Inter" opacity="0" font-size="0.6rem" fill="#28ABE2">About</text>
+          </a>
+          <a class='molecule-link' href="/" data-link>
+            <rect class="home-link" x="114" y="161" fill="#fff" opacity="0" width="100" height="100"></rect>
+          </a>
+          <a class='molecule-link' href="/projects" data-link>
+            <rect id="projects-link" x="280" y="215" fill="blue" opacity="0" width="100" height="100"></rect>
+            <text x="350" y="330" font-family="Inter" opacity="0" font-size="0.6rem" fill="#28ABE2">Projects</text>
+          </a>
+          <a class='molecule-link' href="/contact" data-link>
+            <rect id="contact-link" x="3" y="310" fill="red" opacity="0" width="100" height="100"></rect>
+            <text x="115" y="390" font-family="Inter" opacity="0" font-size="0.6rem" fill="#28ABE2">Contact</text>
+          </a>
+        </svg>
+      </div>
+    </div>
+  <div id="app"></div>
+  <div class="audio-footer">
+    <div class="audio-container">
+      <div class="buttons">
+        <i class="fa-sharp fa-solid fa-backward btn"></i>
+        <div class="play-btn btn">
+          <i class="fas fa-play"></i>
+          <i class="fas fa-pause"></i>
+        </div>
+        <i class="fa-sharp fa-solid fa-forward btn"></i>
+      </div>
+      <div class="track-name">The name of the track</div>
+      <div class="audio"></div>
+    </div>
+  </div>
+
+  <!-- load barba (UMD version) -->
+  <script src="https://unpkg.com/@barba/core"></script>
+
+  <!-- load gsap animation library (minified version) -->
+  <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script type="module" src="/static/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "media 1 is a great video",
+    "url_src": "https://www.youtube.com/embed/XUi580gA5BQ",
+    "url_title": "The revolution will not be televised"
+  },
+  {
+    "id": 2,
+    "name": "media 2 is another thing",
+    "url_src": "https://www.youtube.com/embed/gbPL5q-OVFY",
+    "url_title": "Etienne Jaumet - Metallik Cages (Acid Arab Remix)"
+  }
+]

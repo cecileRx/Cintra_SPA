@@ -60,12 +60,11 @@ const textLinks = document.querySelectorAll('text');
 const newPage = document.querySelector('.another-page');
 
 function goLink(moleculeLink) {
-  console.log('clickkkk')
   gsap.to('image', {
     duration: 1,
     scale: 0.2,
-    x: -10,
-    y: 0
+    x: 20,
+    y: 20
   });
 
   textLinks.forEach(link => link.style.display = 'none');
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", e => {
       if (e.currentTarget.matches("[data-link]")) {
         e.preventDefault();
-        goLink(moleculeLink);
+        // goLink(moleculeLink);
         navigateTo(e.currentTarget.href.baseVal)
       }
     })

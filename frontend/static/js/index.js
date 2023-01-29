@@ -53,47 +53,31 @@ const router  = async () => {
 
 window.addEventListener("popstate", router);
 
-const links = document.querySelectorAll('.molecule-link');
 
-const moleculeLink = document.querySelectorAll('.molecule-link');
+const about = document.querySelector('.about-link');
 const textLinks = document.querySelectorAll('text');
-const newPage = document.querySelector('.another-page');
-
-function goLink(moleculeLink) {
-  gsap.to('image', {
-    duration: 1,
-    scale: 0.2,
-    x: 20,
-    y: 20
-  });
-
-  textLinks.forEach(link => link.style.display = 'none');
-
-}
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  for (const link of links) {
-    console.log(link);
-    link.addEventListener("click", e => {
+    about.addEventListener("click", e => {
       if (e.currentTarget.matches("[data-link]")) {
         e.preventDefault();
-        // goLink(moleculeLink);
-        navigateTo(e.currentTarget.href.baseVal)
+        explode(6, 6)
+        var target = e.currentTarget.href.baseVal;
+        setTimeout(function () {
+          navigateTo(target);
+        }, 2000);
+        textLinks.forEach(link => link.style.display = 'none');
       }
     })
-  }
   router();
 });
 
 
 
 
+
+
 // MENU
-
-const text = document.querySelectorAll('text')
-
-
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -109,21 +93,61 @@ document.addEventListener("DOMContentLoaded", function (event) {
     duration: 1,
     scale: 0.4,
   });
+  };
+});
 
+
+
+function explode(x_center, Y_center) {
+  TweenLite.defaultEase = Linear.easeNone;
+
+  var bounds = $("#logo-cadre-elements")[0].getBBox();
+  var blast = $("#blast");
+
+  var center = {
+    x: bounds.x + bounds.width / x_center,
+    y: bounds.y + bounds.height / Y_center,
   };
 
-});
-// image.addEventListener('mouseover', () => {
-//   gsap.to('image', {
-//     duration: 1,
-//     scale: 1.05,
-//     y: -12
-//   });
-//   gsap.to('text', {
-//     duration: 2,
-//     opacity: 1
-//   })
-// });
+  var stagger = 0.5;
+  var radius = getDistance(center, bounds);
+
+  TweenLite.set(blast, { attr: { r: radius, cx: center.x, cy: center.y } });
+  TweenLite.set(blast, { transformOrigin: "center", scale: 0 });
+
+  var tl = new TimelineMax()
+    .to(blast, stagger, { scale: 1 }, 0)
+    .to(blast, stagger, { scale: 2, autoAlpha: 0 }, stagger)
+
+  $(".element").each(function (i, element) {
+
+    var bbox = element.getBBox();
+    var dist = getDistance(bbox, center);
+    var delay = dist / radius * stagger;
+    var scalar = radius / dist;
+
+    tl.to(element, 2, {
+      autoAlpha: 0,
+      x: (bbox.x - center.x) * scalar,
+      y: (bbox.y - center.y) * scalar
+    }, delay);
+  });
+
+  TweenMax.to(tl, 3, {
+    progress: 1.5,
+    ease: Expo.easeInOut,
+
+  });
+
+  function getDistance(p1, p2) {
+    var dx = p2.x - p1.x;
+    var dy = p2.y - p1.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+
+}
+
 
 
 

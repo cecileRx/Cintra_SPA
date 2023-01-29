@@ -91,20 +91,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // MENU
 
-const image = document.querySelector('image');
-const text = document.querySelector('text')
+const text = document.querySelectorAll('text')
 
-image.addEventListener('mouseover', () => {
-  gsap.to('image', {
+
+
+document.addEventListener("DOMContentLoaded", function (event) {
+
+  window.onload = function () {
+    gsap.set('#calque_1', { autoAlpha:1, x: -180, y: -60, scale: 0.35 });
+    gsap.to('#calque_1 a', {
+      delay: 1,
+      duration: 3,
+      autoAlpha: 1
+    })
+    gsap.to('#calque_1', {
+    delay: 0.5,
     duration: 1,
-    scale: 1.05,
-    y: -12
+    scale: 0.4,
   });
-  gsap.to('text', {
-    duration: 2,
-    opacity: 1
-  })
+
+  };
+
 });
+// image.addEventListener('mouseover', () => {
+//   gsap.to('image', {
+//     duration: 1,
+//     scale: 1.05,
+//     y: -12
+//   });
+//   gsap.to('text', {
+//     duration: 2,
+//     opacity: 1
+//   })
+// });
 
 
 

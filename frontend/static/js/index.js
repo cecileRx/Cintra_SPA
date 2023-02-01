@@ -203,7 +203,7 @@ function animAbout() {
   const TL = gsap.timeline();
 
   TL
-    .to(aboutTitle, { autoAlpha: 1, y: 0 })
+    .to(aboutTitle, { autoAlpha: 1 })
     .to(aboutText1, { autoAlpha: 1, y: 0 })
     .to(aboutText2, { autoAlpha: 1, y: 0 })
     .to(aboutText3, { autoAlpha: 1, y: 0 })

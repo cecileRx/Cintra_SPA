@@ -18,14 +18,14 @@ html {
 html,
 body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   font-family: 'Inter', sans-serif;
 }
 
-#app {
-  margin-bottom: 100px;
+#container {
+  min-height: 100%;
 }
+
 
 #app a {
   color: white;
@@ -34,7 +34,7 @@ body {
 /* HOME VIEW */
 
 .main-container {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   position: relative;
 }
@@ -118,11 +118,10 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 200px 200px;
+  padding: 70px 200px;
 }
  .about-title {
   opacity: 0;
-  transform: translateY(-50px);
   visibility: hidden;
   text-align: right ;
   padding-left: 56px;
@@ -130,8 +129,6 @@ h1 {
   padding-right: 50px;
 
 }
-
-
 
 .about-text {
   text-align: left;
@@ -163,7 +160,7 @@ h1 {
 /* AUDIOPLAYER */
 
 .audio-footer {
-  margin-top: auto;
+
 }
 
 .audio-container {
@@ -175,8 +172,8 @@ h1 {
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
   font-family: "Roboto", sans-serif;
   overflow: hidden;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
 
 }
 

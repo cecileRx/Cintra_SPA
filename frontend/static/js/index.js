@@ -55,31 +55,18 @@ window.addEventListener("popstate",router);
 
 function checkURLchange() {
   // ATTENTION SEULEMNT EN DEVELOPPEMENT!!!!!!!!!!!!!!!!!!!!
-  var devPath = "http://localhost:3000/"
+  var devHomePath = "http://localhost:3000/"
+  var devAboutPath = "http://localhost:3000/about"
   var newURL = window.location.href
   if (newURL != oldURL) {
-    console.log("yo");
+    console.log(newURL);
     oldURL = newURL;
-    setInterval(checkURLchange, 1000);
-    if (newURL === devPath) {
+    setInterval(checkURLchange, 0);
+    if (newURL === devHomePath) {
       animHome();
-      document.querySelector('.about-link').addEventListener("click", e => {
-        console.log(e)
-        if (e.currentTarget.matches("[data-link]")) {
-          e.preventDefault();
-          explode(6, 6)
-          var target = e.currentTarget.href.baseVal;
-          console.log('target', target)
-          setTimeout(function () {
-            navigateTo(target);
-          }, 2000);
-          const textLinks = document.querySelectorAll('text');
-          gsap.to(textLinks, {
-            duration: 2,
-            opacity: 0
-          })
-        }
-      });
+      animLinksHome();
+    } else if (newURL === devAboutPath) {
+      animAbout();
     }
   }
 }
@@ -106,19 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // MENU
 
-const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
 function animHome() {
-  gsap.set('#calque_1', { autoAlpha: 1, x: -180, y: -60, scale: 0.35 });
   gsap.to('#calque_1 a', {
-    delay: 1,
-    duration: 3,
+    delay: 0.5,
+    duration: 2,
     autoAlpha: 1
   })
   gsap.to('#calque_1', {
-    delay: 0.5,
     duration: 1,
-    scale: 0.4,
+    scale: 0.95,
   });
 };
 
@@ -129,43 +112,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   document.body.addEventListener('click', e => {
-//     e.preventDefault();
-
-//     if (e.target.matches('[data-link]')) {
-//       tl.fromTo('#app', { autoAlpha: 1, x: -180, y: -60, scale: 0.35 }, {
-//         delay: 0.5,
-//         duration: 1,
-//         scale: 0.4 });
-
-//       navigateTo(e.target.href);
-//     }
-
-//   })
-// });
-
-
-document.addEventListener("DOMContentLoaded", function (event) {
+function animLinksHome() {
   if (location.pathname === "/") {
-    document.querySelector('.about-link').addEventListener("click", e => {
-      console.log(e)
-      if (e.currentTarget.matches("[data-link]")) {
-        e.preventDefault();
-        explode(6, 6)
-        var target = e.currentTarget.href.baseVal;
-        console.log('target', target)
-        setTimeout(function () {
-          navigateTo(target);
-        }, 2000);
-        const textLinks = document.querySelectorAll('text');
-        gsap.to(textLinks, {
-          duration: 2,
-          opacity: 0
-        })
-      }
+    const moleculeLinks = document.querySelectorAll('.molecule-link');
+    console.log(moleculeLinks)
+    moleculeLinks.forEach(function(link) {
+      link.addEventListener("click", e => {
+        console.log(e)
+        if (e.currentTarget.matches("[data-link]")) {
+          e.preventDefault();
+          explode(6, 6)
+          var target = e.currentTarget.href.baseVal;
+          console.log('target', target)
+          setTimeout(function () {
+            navigateTo(target);
+          }, 2000);
+          const textLinks = document.querySelectorAll('text');
+          gsap.to(textLinks, {
+            duration: 2,
+            opacity: 0
+          })
+        }
+      });
     });
   }
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  animLinksHome();
 });
 
 function explode(x_center, Y_center) {
@@ -217,7 +191,23 @@ function explode(x_center, Y_center) {
 
 }
 
+//ABOUT VIEW
 
+function animAbout() {
+
+  const aboutTitle = document.querySelector('.about-title');
+  const aboutText1 = document.querySelector('.about-prem');
+  const aboutText2 = document.querySelector('.about-text_2');
+  const aboutText3 = document.querySelector('.about-text_3');
+
+  const TL = gsap.timeline();
+
+  TL
+    .to(aboutTitle, { autoAlpha: 1, y: 0 })
+    .to(aboutText1, { autoAlpha: 1, y: 0 })
+    .to(aboutText2, { autoAlpha: 1, y: 0 })
+    .to(aboutText3, { autoAlpha: 1, y: 0 })
+}
 
 
 // // AUDIOPLAYER

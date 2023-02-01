@@ -11,11 +11,11 @@ export default class extends AbstractView {
       <h1>Hello Projects</h1>
       <p>
         PROJECT 1:
-        <a href="/projects/1" data-link> LINK TO VIDEO 1 </a>
+        <a href="/projects/1"> LINK TO VIDEO 1 </a>
       </p>
       <p>
         PROJECT 2:
-        <a href="/projects/2" data-link> LINK TO VIDEO 2 </a>
+        <a href="/projects/2"> LINK TO VIDEO 2 </a>
       </p>
 
     `;

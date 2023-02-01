@@ -30,6 +30,9 @@ body {
 #app a {
   color: white;
 }
+
+/* HOME VIEW */
+
 .main-container {
   height: 100vh;
   width: 100%;
@@ -86,9 +89,11 @@ a {
   height: 100%;
 }
 
- /* #calque_1 {
-  visibility: hidden;
-} */
+ #calque_1 {
+  /* visibility: hidden; */
+  overflow: visible !important;
+}
+
  #calque_1 a {
   opacity: 0;
 }
@@ -106,6 +111,54 @@ area {
 h1 {
   color: white;
 }
+
+/* ABOUT VIEW */
+
+#about-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 200px 200px;
+}
+ .about-title {
+  opacity: 0;
+  transform: translateY(-50px);
+  visibility: hidden;
+  text-align: right ;
+  padding-left: 56px;
+  color: white;
+  padding-right: 50px;
+
+}
+
+
+
+.about-text {
+  text-align: left;
+  color: white;
+}
+
+ .about-prem {
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  margin-bottom: 20px;
+}
+
+ .about-text_2 {
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  margin-bottom: 20px;
+}
+
+ .about-text_3 {
+  opacity: 0;
+  transform: translateY(-30px);
+  visibility: hidden;
+  margin-bottom: 20px;
+}
+
 
 /* AUDIOPLAYER */
 

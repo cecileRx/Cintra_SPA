@@ -51,52 +51,122 @@ const router  = async () => {
 
 };
 
-window.addEventListener("popstate", router);
+window.addEventListener("popstate",router);
 
+function checkURLchange() {
+  // ATTENTION SEULEMNT EN DEVELOPPEMENT!!!!!!!!!!!!!!!!!!!!
+  var devPath = "http://localhost:3000/"
+  var newURL = window.location.href
+  if (newURL != oldURL) {
+    console.log("yo");
+    oldURL = newURL;
+    setInterval(checkURLchange, 1000);
+    if (newURL === devPath) {
+      animHome();
+      document.querySelector('.about-link').addEventListener("click", e => {
+        console.log(e)
+        if (e.currentTarget.matches("[data-link]")) {
+          e.preventDefault();
+          explode(6, 6)
+          var target = e.currentTarget.href.baseVal;
+          console.log('target', target)
+          setTimeout(function () {
+            navigateTo(target);
+          }, 2000);
+          const textLinks = document.querySelectorAll('text');
+          gsap.to(textLinks, {
+            duration: 2,
+            opacity: 0
+          })
+        }
+      });
+    }
+  }
+}
 
-const about = document.querySelector('.about-link');
-const textLinks = document.querySelectorAll('text');
+var oldURL = window.location.href;
+setInterval(checkURLchange, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
-    about.addEventListener("click", e => {
-      if (e.currentTarget.matches("[data-link]")) {
-        e.preventDefault();
-        explode(6, 6)
-        var target = e.currentTarget.href.baseVal;
-        setTimeout(function () {
-          navigateTo(target);
-        }, 2000);
-        textLinks.forEach(link => link.style.display = 'none');
-      }
-    })
   router();
 });
 
+// VIEWS NAVIGATION
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', e => {
+    if (e.target.matches('[data-link]')) {
+      e.preventDefault();
+      navigateTo(e.target.href);
+    }
+  })
 
-
-
+  router();
+})
 
 // MENU
 
-document.addEventListener("DOMContentLoaded", function (event) {
+const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-  window.onload = function () {
-    gsap.set('#calque_1', { autoAlpha:1, x: -180, y: -60, scale: 0.35 });
-    gsap.to('#calque_1 a', {
-      delay: 1,
-      duration: 3,
-      autoAlpha: 1
-    })
-    gsap.to('#calque_1', {
+function animHome() {
+  gsap.set('#calque_1', { autoAlpha: 1, x: -180, y: -60, scale: 0.35 });
+  gsap.to('#calque_1 a', {
+    delay: 1,
+    duration: 3,
+    autoAlpha: 1
+  })
+  gsap.to('#calque_1', {
     delay: 0.5,
     duration: 1,
     scale: 0.4,
   });
-  };
+};
+
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  if (location.pathname === "/") {
+    window.onload = animHome();
+  }
 });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.body.addEventListener('click', e => {
+//     e.preventDefault();
 
+//     if (e.target.matches('[data-link]')) {
+//       tl.fromTo('#app', { autoAlpha: 1, x: -180, y: -60, scale: 0.35 }, {
+//         delay: 0.5,
+//         duration: 1,
+//         scale: 0.4 });
+
+//       navigateTo(e.target.href);
+//     }
+
+//   })
+// });
+
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  if (location.pathname === "/") {
+    document.querySelector('.about-link').addEventListener("click", e => {
+      console.log(e)
+      if (e.currentTarget.matches("[data-link]")) {
+        e.preventDefault();
+        explode(6, 6)
+        var target = e.currentTarget.href.baseVal;
+        console.log('target', target)
+        setTimeout(function () {
+          navigateTo(target);
+        }, 2000);
+        const textLinks = document.querySelectorAll('text');
+        gsap.to(textLinks, {
+          duration: 2,
+          opacity: 0
+        })
+      }
+    });
+  }
+});
 
 function explode(x_center, Y_center) {
   TweenLite.defaultEase = Linear.easeNone;
@@ -144,7 +214,6 @@ function explode(x_center, Y_center) {
     var dy = p2.y - p1.y;
     return Math.sqrt(dx * dx + dy * dy);
   }
-
 
 }
 

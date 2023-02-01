@@ -86,12 +86,13 @@ a {
   height: 100%;
 }
 
-#calque_1 {
+ /* #calque_1 {
   visibility: hidden;
-}
-#calque_1 a {
+} */
+ #calque_1 a {
   opacity: 0;
 }
+
 svg {
   margin: 0 auto;
   display: block;

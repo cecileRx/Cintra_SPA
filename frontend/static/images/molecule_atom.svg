@@ -1,19 +1,6 @@
-import AbstractView from "./AbstractView.js";
-
-export default class extends AbstractView {
-  constructor(params) {
-    super(params);
-    this.setTitle("About");
-  }
-
-  async getHtml() {
-    return `
-<svg id="atom" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.84 25.82"  witdh="50px" height="50px" xml:space="preserve">
-<a class='atom-link' href="/" data-link>
-<rect  x="5" y="0" fill="white" opacity="10" width="30px" height="50px"></rect>
-</a>
-<defs>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.84 25.82">
+  <defs>
     <style>
       .cls-1 {
         fill: #29abe2;
@@ -256,37 +243,3 @@ export default class extends AbstractView {
     </g>
   </g>
 </svg>
- <div id="about-container">
-      <h2 class="about-title">About Miguel</h2>
-      <div class="about-text">
-      <p class="about-prem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque nisi et alias totam
-        exercitationem facilis fugiat nulla deserunt expedita aliquid, impedit doloremque at eveniet
-        similique nobis neque repellendus temporibus perferendis?</p>
-      <p class="about-text_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, doloribus minus,
-        voluptates
-        non minima odio optio, quam dicta earum necessitatibus aliquid a excepturi facilis accusantium voluptatem aperiam
-        tenetur esse repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aspernatur cumque officiis
-        autem atque, nulla ut? Voluptatum assumenda aliquam rem dolores id nulla laborum? Vero eligendi impedit quasi
-        dolores
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nisi, vitae enim non repellat, earum, eos optio ab
-        labore similique culpa perferendis natus! Qui officiis quo earum exercitationem commodi ea! Lorem ipsum dolor sit
-        amet
-        consectetur adipisicing elit. Cupiditate voluptas exercitationem ea, quod dolorem voluptatum eligendi, facilis
-        veritatis voluptate ipsa recusandae? Fugiat dolor molestiae explicabo culpa distinctio dolorum earum porro?</p>
-        <p class="about-text_3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, doloribus minus,
-        voluptates
-        non minima odio optio, quam dicta earum necessitatibus aliquid a excepturi facilis accusantium voluptatem aperiam
-        tenetur esse repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aspernatur cumque officiis
-        autem atque, nulla ut? Voluptatum assumenda aliquam rem dolores id nulla laborum? Vero eligendi impedit quasi
-        dolores
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nisi, vitae enim non repellat, earum, eos optio ab
-        labore similique culpa perferendis natus! Qui officiis quo earum exercitationem commodi ea! Lorem ipsum dolor sit
-        amet
-        consectetur adipisicing elit. Cupiditate voluptas exercitationem ea, quod dolorem voluptatum eligendi, facilis
-        veritatis voluptate ipsa recusandae? Fugiat dolor molestiae explicabo culpa distinctio dolorum earum porro?</p>
-    </div>
-    </div>
-
-    `;
-  }
-}

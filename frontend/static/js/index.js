@@ -67,12 +67,19 @@ function checkURLchange() {
       animLinksHome();
     } else if (newURL === devAboutPath) {
       animAbout();
+      const backHome = document.querySelector('.atom-link')
+      backHome.addEventListener("click", e => {
+      const target = e.currentTarget.href.baseVal;
+       e.preventDefault();
+       navigateTo(target);
+      })
     }
   }
 }
 
 var oldURL = window.location.href;
 setInterval(checkURLchange, 1000);
+
 
 document.addEventListener("DOMContentLoaded", () => {
   router();
@@ -111,6 +118,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     window.onload = animHome();
   }
 });
+
+
+
 
 function animLinksHome() {
   if (location.pathname === "/") {
@@ -195,6 +205,7 @@ function explode(x_center, Y_center) {
 
 function animAbout() {
 
+  const atom = document.querySelector('#atom');
   const aboutTitle = document.querySelector('.about-title');
   const aboutText1 = document.querySelector('.about-prem');
   const aboutText2 = document.querySelector('.about-text_2');
@@ -203,10 +214,11 @@ function animAbout() {
   const TL = gsap.timeline();
 
   TL
-    .to(aboutTitle, { autoAlpha: 1 })
-    .to(aboutText1, { autoAlpha: 1, y: 0 })
-    .to(aboutText2, { autoAlpha: 1, y: 0 })
-    .to(aboutText3, { autoAlpha: 1, y: 0 })
+    .to(atom, { autoAlpha: 1 })
+    .to(aboutTitle, { autoAlpha: 1, duration: 1 })
+    .to(aboutText1, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
+    .to(aboutText2, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
+    .to(aboutText3, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
 }
 
 

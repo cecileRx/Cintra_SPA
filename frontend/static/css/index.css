@@ -90,7 +90,7 @@ p {
   opacity: 0;
 }
 
-svg {
+#molecule svg {
   margin: 0 auto;
   display: block;
 }
@@ -103,6 +103,17 @@ area {
 
 /* ABOUT VIEW */
 
+#atom {
+position : fixed;
+left: 30px;
+opacity: 0;
+visibility: hidden;
+}
+
+.back-home {
+  padding-top: 30px;
+}
+
 #about-container {
   display: flex;
   justify-content: space-around;
@@ -114,14 +125,12 @@ area {
   visibility: hidden;
   text-align: right ;
   padding-left: 56px;
-  color: white;
   padding-right: 50px;
 
 }
 
 .about-text {
   text-align: left;
-  color: white;
 }
 
  .about-prem {

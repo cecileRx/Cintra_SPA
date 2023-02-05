@@ -89,14 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', e => {
-    if (e.target.matches('[data-link]')) {
+    if (e.currentTarget.matches('[data-link]')) {
       e.preventDefault();
-      navigateTo(e.target.href);
+      navigateTo(e.currentTarget.href.baseVal);
     }
   })
 
   router();
 })
+
+
 
 // MENU
 
@@ -121,17 +123,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-
 function animLinksHome() {
   if (location.pathname === "/") {
     const moleculeLinks = document.querySelectorAll('.molecule-link');
-    console.log(moleculeLinks)
     moleculeLinks.forEach(function(link) {
       link.addEventListener("click", e => {
-        console.log(e)
+
         if (e.currentTarget.matches("[data-link]")) {
           e.preventDefault();
-          explode(6, 6)
+          if (e.currentTarget.classList.contains("about-link")) {
+            explode(16,16)
+          } else if (e.currentTarget.classList.contains("projects-link")) {
+            explode(105,82)
+          } else {
+            explode(12,112)
+          }
+
           var target = e.currentTarget.href.baseVal;
           console.log('target', target)
           setTimeout(function () {
@@ -148,6 +155,11 @@ function animLinksHome() {
   }
 }
 
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function (event) {
   animLinksHome();
 });
@@ -156,11 +168,12 @@ function explode(x_center, Y_center) {
   TweenLite.defaultEase = Linear.easeNone;
 
   var bounds = $("#logo-cadre-elements")[0].getBBox();
+  console.log("bound",bounds)
   var blast = $("#blast");
 
   var center = {
-    x: bounds.x + bounds.width / x_center,
-    y: bounds.y + bounds.height / Y_center,
+    x: x_center,
+    y: Y_center,
   };
 
   var stagger = 0.5;

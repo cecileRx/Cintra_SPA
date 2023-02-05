@@ -10,7 +10,7 @@ export default class extends AbstractView {
     return `
 <svg id="atom" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.84 25.82"  witdh="50px" height="50px" xml:space="preserve">
 <a class='atom-link' href="/" data-link>
-<rect  x="5" y="0" fill="white" opacity="10" width="30px" height="50px"></rect>
+<rect  x="5" y="0" fill="white" opacity="0" width="30px" height="50px"></rect>
 </a>
 <defs>
 

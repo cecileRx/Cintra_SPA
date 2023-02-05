@@ -106,6 +106,7 @@ area {
 #atom {
 position : fixed;
 left: 30px;
+top: 20px;
 opacity: 0;
 visibility: hidden;
 }

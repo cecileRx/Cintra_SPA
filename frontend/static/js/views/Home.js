@@ -22,11 +22,11 @@ export default class extends AbstractView {
           <a class='molecule-link' href="/" data-link>
             <rect class="home-link" x="32" y="47" fill="white" opacity="0" width="40" height="42"></rect>
           </a>
-          <a class='molecule-link' href="/projects" data-link>
+          <a class='molecule-link projects-link' href="/projects" data-link>
             <rect id="projects-link" x="80" y="57" fill="blue" opacity="0" width="50" height="40"></rect>
             <text x="97" y="65"  font-family="Inter" opacity="10" font-size="0.2rem" fill="#28ABE2">Projects</text>
           </a>
-          <a class='molecule-link' href="/contact" data-link>
+          <a class='molecule-link contact-link' href="/contact" data-link>
             <rect id="contact-link" x="0" y="100" fill="red" opacity="0" width="30" height="100"></rect>
             <text x="33" y="120" font-family="Inter" opacity="10" font-size="0.2rem" fill="#28ABE2">Contact</text>
           </a>

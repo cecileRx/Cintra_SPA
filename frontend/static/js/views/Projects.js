@@ -261,25 +261,29 @@ export default class extends AbstractView {
       <div class="img-container">
 
         <div class="card-Project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
-          <h4>8 Ball Pool</h4>
-          <p>Mobile . sfx</p>
+          <img class="projects-thumb" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
+          <h4>Exophobia</h4>
+          <p>PC . sfx</p>
         </div>
+
         <div class="card-Project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
           <h4>Agent_Klutz</h4>
           <p>PC . Music & sfx</p>
         </div>
-        <div class="card-Project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
-          <h4>Exophobia</h4>
-          <p>PC . sfx</p>
-        </div>
+
         <div class="card-Project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns.jpg" alt="">
           <h4>Greedy Guns</h4>
           <p>PC . sfx</p>
         </div>
+
+         <div class="card-Project">
+          <img class="projects-thumb" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
+          <h4>8 Ball Pool</h4>
+          <p>Mobile . sfx</p>
+        </div>
+
         <div class="card-Project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns_Scream.png" alt="">
           <h4>Greedy Guns Scream</h4>

@@ -57,6 +57,8 @@ function checkURLchange() {
   // ATTENTION SEULEMNT EN DEVELOPPEMENT!!!!!!!!!!!!!!!!!!!!
   var devHomePath = "http://localhost:3000/"
   var devAboutPath = "http://localhost:3000/about"
+  var devProjectsPath = "http://localhost:3000/projects"
+
   var newURL = window.location.href
   if (newURL != oldURL) {
     console.log(newURL);
@@ -67,12 +69,12 @@ function checkURLchange() {
       animLinksHome();
     } else if (newURL === devAboutPath) {
       animAbout();
-      const backHome = document.querySelector('.atom-link')
-      backHome.addEventListener("click", e => {
-      const target = e.currentTarget.href.baseVal;
-       e.preventDefault();
-       navigateTo(target);
-      })
+      backHome();
+
+    } else if (newURL === devProjectsPath) {
+      circleMouse();
+      animCardProject();
+      backHome();
     }
   }
 }
@@ -219,6 +221,17 @@ function explode(x_center, Y_center) {
 
 }
 
+// BACKHOME FOR ALL VIEWS
+
+function backHome(){
+  const backHome = document.querySelector('.atom-link')
+  backHome.addEventListener("click", e => {
+    const target = e.currentTarget.href.baseVal;
+    e.preventDefault();
+    navigateTo(target);
+  });
+};
+
 //ABOUT VIEW
 
 function animAbout() {
@@ -239,8 +252,54 @@ function animAbout() {
     .to(aboutText3, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
 }
 
+// PROJECTS VIEW
 
-// // AUDIOPLAYER
+function circleMouse() {
+  gsap.set(".ball", { xPercent: -50, yPercent: -50 });
+
+  const ball = document.querySelector(".ball");
+  const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  const mouse = { x: pos.x, y: pos.y };
+  const speed = 0.2;
+
+  const xSet = gsap.quickSetter(ball, "x", "px");
+  const ySet = gsap.quickSetter(ball, "y", "px");
+
+  window.addEventListener("mousemove", e => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+  });
+
+  gsap.ticker.add(() => {
+
+    // adjust speed for higher refresh monitors
+    const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+
+    pos.x += (mouse.x - pos.x) * dt;
+    pos.y += (mouse.y - pos.y) * dt;
+    xSet(pos.x);
+    ySet(pos.y);
+  });
+};
+
+function animCardProject() {
+  const cardProject = document.querySelectorAll('.card-project img')
+
+  gsap.utils.toArray(cardProject).forEach(el => {
+    console.log("element", el)
+
+    let animation = gsap.fromTo(el, { scale: 1 }, {
+      scale: 1.01,
+      stagger: 0.08,
+      paused: true
+    });
+    el.addEventListener("mouseover", () => animation.play());
+    el.addEventListener("mouseout", () => animation.reverse());
+  });
+};
+
+
+// AUDIOPLAYER
 
 var audioTrack = WaveSurfer.create({
   container: '.audio',

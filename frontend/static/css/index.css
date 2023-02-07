@@ -157,28 +157,42 @@ visibility: hidden; */
 
 /* PROJECTS VIEW */
 
+.ball {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 3px solid dodgerblue;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 .img-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding-top: 150px;
+  justify-items: center;
 }
 
 
-.card-Project {
-  margin: 50px 80px 80px 30px;
+.card-project {
+
+  margin-bottom: 100px;
+
+
 }
 
-.card-Project img {
+.card-project img {
   box-shadow: rgba(114, 120, 126, 0.1) 0px 0px 24px;
 }
 
-.card-Project h4 {
+.card-project h4 {
   margin-top: 10px;
   margin-bottom: 3px;
 }
 
-.card-Project p {
+.card-project p {
   margin-top: 0px;
 }
 

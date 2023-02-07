@@ -257,39 +257,39 @@ export default class extends AbstractView {
     </g>
   </g>
 </svg>
-
+      <div class="ball"></div>
       <div class="img-container">
 
-        <div class="card-Project">
+        <div class="card-project row1">
           <img class="projects-thumb" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
           <h4>Exophobia</h4>
           <p>PC . sfx</p>
         </div>
 
-        <div class="card-Project">
+        <div class="card-project row1">
           <img class="projects-thumb" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
           <h4>Agent_Klutz</h4>
           <p>PC . Music & sfx</p>
         </div>
 
-        <div class="card-Project">
+        <div class="card-project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns.jpg" alt="">
           <h4>Greedy Guns</h4>
           <p>PC . sfx</p>
         </div>
 
-         <div class="card-Project">
+         <div class="card-project">
           <img class="projects-thumb" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
           <h4>8 Ball Pool</h4>
           <p>Mobile . sfx</p>
         </div>
 
-        <div class="card-Project">
+        <div class="card-project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns_Scream.png" alt="">
           <h4>Greedy Guns Scream</h4>
           <p>PC. sfx</p>
         </div>
-        <div class="card-Project">
+        <div class="card-project">
           <img class="projects-thumb" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
           <h4>Strikers Edge</h4>
           <p>PS4 . Music & sfx</p>

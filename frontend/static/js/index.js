@@ -143,9 +143,14 @@ function animLinksHome() {
           console.log('target', target)
           setTimeout(function () {
             navigateTo(target);
-          }, 2000);
+          }, 1500);
           const textLinks = document.querySelectorAll('text');
+          const title = document.querySelector('.title');
           gsap.to(textLinks, {
+            duration: 2,
+            opacity: 0
+          })
+          gsap.to(title, {
             duration: 2,
             opacity: 0
           })
@@ -228,7 +233,7 @@ function animAbout() {
 
   TL
     .to(atom, { autoAlpha: 1 })
-    .to(aboutTitle, { autoAlpha: 1, duration: 1 })
+    .to(aboutTitle, { autoAlpha: 1, duration: 1 }, '-=0.75')
     .to(aboutText1, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
     .to(aboutText2, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
     .to(aboutText3, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')

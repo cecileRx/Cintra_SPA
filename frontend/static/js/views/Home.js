@@ -8,7 +8,7 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-         <div class="main-container">
+  <div class="main-container">
 
        <div id="molecule">
 
@@ -3126,7 +3126,7 @@ export default class extends AbstractView {
         </svg>
       </div>
     </div>
-      <div class="title">
+    <div class="title">
       <div class="signature">
           <h2>Miguel Cintra</h2>
           <p>sound designer . composer . music producer</p>
@@ -3139,7 +3139,7 @@ export default class extends AbstractView {
           </div>
       </div>
     </div>
-  </div>
+
     `;
   };
 };

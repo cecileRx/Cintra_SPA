@@ -288,18 +288,13 @@ function animFirstBlock(){
   const firstBlockImage = document.querySelector('img.bloc1');
   const firstBlockText = document.querySelector('.bloctext1');
   const title = document.querySelector('.title-projects-view');
-  // const secondBlockImage = document.querySelector('img.bloc2');
-  // const secondBlockText = document.querySelector('.scroll-text.bloc2');
-
 
   const TL = gsap.timeline();
 
   TL
     .to(title, {autoAlpha: 1, duration: 0.3})
-    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.75')
+    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.55')
     .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
-    // .to(secondBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 },'-=0.75')
-    // .to(secondBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
 
   const revealFromLeftImage = document.querySelectorAll('img.reveal_from_left');
   const revealFromLeftText = document.querySelectorAll('.scroll-text.reveal_from_left');
@@ -318,7 +313,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
-        start: "top-=100% center",
+        start: "top-=150% center",
         toggleActions: "play pause resume reverse"
       }
     });
@@ -331,7 +326,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
         trigger: el,
-        start: "top-=100 center+=200",
+        start: "top-=140 center+=200",
         toggleActions: "play pause resume reverse"
       }
     })
@@ -341,7 +336,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
-        start: "-80% center",
+        start: "top-=120% center",
         toggleActions: "play pause resume reverse"
       }
     });

@@ -296,7 +296,7 @@ function animFirstBlock(){
 
   TL
     .to(title, {autoAlpha: 1, duration: 0.3})
-    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.95')
+    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.75')
     .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
     // .to(secondBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 },'-=0.75')
     // .to(secondBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')

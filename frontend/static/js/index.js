@@ -72,8 +72,7 @@ function checkURLchange() {
       backHome();
 
     } else if (newURL === devProjectsPath) {
-      circleMouse();
-      animCardProject();
+      animFirstBlock();
       backHome();
     }
   }
@@ -254,49 +253,120 @@ function animAbout() {
 
 // PROJECTS VIEW
 
-function circleMouse() {
-  gsap.set(".ball", { xPercent: -50, yPercent: -50 });
+gsap.registerPlugin(ScrollTrigger);
 
-  const ball = document.querySelector(".ball");
-  const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-  const mouse = { x: pos.x, y: pos.y };
-  const speed = 0.2;
+// function circleMouse() {
+//   gsap.set(".ball", { xPercent: -50, yPercent: -50 });
 
-  const xSet = gsap.quickSetter(ball, "x", "px");
-  const ySet = gsap.quickSetter(ball, "y", "px");
+//   const ball = document.querySelector(".ball");
+//   const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+//   const mouse = { x: pos.x, y: pos.y };
+//   const speed = 0.2;
 
-  window.addEventListener("mousemove", e => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-  });
+//   const xSet = gsap.quickSetter(ball, "x", "px");
+//   const ySet = gsap.quickSetter(ball, "y", "px");
 
-  gsap.ticker.add(() => {
+//   window.addEventListener("mousemove", e => {
+//     mouse.x = e.x;
+//     mouse.y = e.y;
+//   });
 
-    // adjust speed for higher refresh monitors
-    const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+//   gsap.ticker.add(() => {
 
-    pos.x += (mouse.x - pos.x) * dt;
-    pos.y += (mouse.y - pos.y) * dt;
-    xSet(pos.x);
-    ySet(pos.y);
-  });
-};
+//     // adjust speed for higher refresh monitors
+//     const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
 
-function animCardProject() {
-  const cardProject = document.querySelectorAll('.card-project img')
+//     pos.x += (mouse.x - pos.x) * dt;
+//     pos.y += (mouse.y - pos.y) * dt;
+//     xSet(pos.x);
+//     ySet(pos.y);
+//   });
+// };
 
-  gsap.utils.toArray(cardProject).forEach(el => {
-    console.log("element", el)
+function animFirstBlock(){
 
-    let animation = gsap.fromTo(el, { scale: 1 }, {
-      scale: 1.01,
-      stagger: 0.08,
-      paused: true
+  const firstBlockImage = document.querySelector('img.bloc1');
+  const firstBlockText = document.querySelector('.bloctext1');
+  const title = document.querySelector('.title-projects-view');
+  // const secondBlockImage = document.querySelector('img.bloc2');
+  // const secondBlockText = document.querySelector('.scroll-text.bloc2');
+
+
+  const TL = gsap.timeline();
+
+  TL
+    .to(title, {autoAlpha: 1, duration: 0.3})
+    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.95')
+    .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
+    // .to(secondBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 },'-=0.75')
+    // .to(secondBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
+
+  const revealFromLeftImage = document.querySelectorAll('img.reveal_from_left');
+  const revealFromLeftText = document.querySelectorAll('.scroll-text.reveal_from_left');
+
+  revealFromLeftText.forEach(el => {
+    gsap.to(el, {
+      autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
+        trigger: el,
+        start: "top-=100 center+=200",
+        toggleActions: "play pause resume reverse"
+      }
+    })
+  })
+
+  revealFromLeftImage.forEach(el => {
+    gsap.to(el, {
+      autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
+        trigger: el,
+        start: "top-=100% center",
+        toggleActions: "play pause resume reverse"
+      }
     });
-    el.addEventListener("mouseover", () => animation.play());
-    el.addEventListener("mouseout", () => animation.reverse());
-  });
-};
+  })
+
+  const revealFromRightImage = document.querySelectorAll('.projects-thumb.right');
+  const revealFromRightText = document.querySelectorAll('.scroll-text');
+
+  revealFromRightText.forEach(el => {
+    gsap.to(el, {
+      autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
+        trigger: el,
+        start: "top-=100 center+=200",
+        toggleActions: "play pause resume reverse"
+      }
+    })
+  })
+
+  revealFromRightImage.forEach(el => {
+    gsap.to(el, {
+      autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
+        trigger: el,
+        start: "-80% center",
+        toggleActions: "play pause resume reverse"
+      }
+    });
+  })
+
+}
+
+
+
+
+// function animCardProject() {
+//   const cardProject = document.querySelectorAll('.card-project img')
+
+//   gsap.utils.toArray(cardProject).forEach(el => {
+//     console.log("element", el)
+
+//     let animation = gsap.fromTo(el, { scale: 1 }, {
+//       scale: 1.01,
+//       stagger: 0.08,
+//       paused: true
+//     });
+//     el.addEventListener("mouseover", () => animation.play());
+//     el.addEventListener("mouseout", () => animation.reverse());
+//   });
+// };
 
 
 // AUDIOPLAYER

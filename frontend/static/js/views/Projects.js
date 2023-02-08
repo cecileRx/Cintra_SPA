@@ -257,45 +257,69 @@ export default class extends AbstractView {
     </g>
   </g>
 </svg>
-      <div class="ball"></div>
+     <h1 class="title-projects-view">Projects </h1>
+
       <div class="img-container">
 
-        <div class="card-project row1">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
-          <h4>Exophobia</h4>
-          <p>PC . sfx</p>
-        </div>
+        <section class="card-project ">
+          <img class="projects-thumb bloc1" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
+          <div class=" left bloctext1">
+              <h2>Exophobia</h2>
+              <p class="specifications">PC . sfx</p>
+              <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab, minus fuga explicabo quibusdam </p>
+          </div>
+        </section>
 
-        <div class="card-project row1">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
-          <h4>Agent_Klutz</h4>
-          <p>PC . Music & sfx</p>
-        </div>
+        <section class="card-project ">
+          <div class="scroll-text bloc2">
+            <h2>Agent_Klutz</h2>
+            <p class="specifications">PC . Music & sfx</p>
+            <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
+              minus fuga explicabo quibusdam </p>
+          </div>
+          <img class="projects-thumb right klutz bloc2" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
+        </section>
 
-        <div class="card-project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns.jpg" alt="">
-          <h4>Greedy Guns</h4>
-          <p>PC . sfx</p>
-        </div>
+        <section class="card-project">
+          <img class="projects-thumb reveal_from_left bloc3" src="static/images/Projects_thumb/Greedy_Guns.jpg" alt="">
+          <div class="scroll-text reveal_from_left left bloc3">
+            <h2>Greedy Guns</h2>
+            <p class="specifications">PC . sfx</p>
+            <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
+              minus fuga explicabo quibusdam </p>
+          </div>
+        </section>
 
-         <div class="card-project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
-          <h4>8 Ball Pool</h4>
-          <p>Mobile . sfx</p>
-        </div>
+        <section class="card-project">
+          <div class="scroll-text">
+            <h2>8 Ball Pool</h2>
+            <p class="specifications">Mobile . sfx</p>
+            <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
+              minus fuga explicabo quibusdam </p>
+          </div>
+          <img class="projects-thumb right" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
+        </section>
 
-        <div class="card-project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Greedy_Guns_Scream.png" alt="">
-          <h4>Greedy Guns Scream</h4>
-          <p>PC. sfx</p>
-        </div>
-        <div class="card-project">
-          <img class="projects-thumb" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
-          <h4>Strikers Edge</h4>
-          <p>PS4 . Music & sfx</p>
-        </div>
+        <section class="card-project">
+          <img class="projects-thumb reveal_from_left" src="static/images/Projects_thumb/Greedy_Guns_Scream.png" alt="">
+          <div class="scroll-text reveal_from_left left">
+          <h2>Greedy Guns Scream</h2>
+          <p class="specifications">PC. sfx</p>
+          <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
+            minus fuga explicabo quibusdam </p>
+          </div>
+        </section>
+        <section class="card-project">
+          <div class="scroll-text">
+          <h2>Strikers Edge</h2>
+          <p class="specifications">PS4 . Music & sfx</p>
+          <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
+            minus fuga explicabo quibusdam </p>
+          </div>
+          <img class="projects-thumb right" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
+        </section>
 
-  </div>
+      </div>
 
     `;
   }

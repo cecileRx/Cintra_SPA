@@ -166,28 +166,69 @@ visibility: hidden; */
   border: 3px solid dodgerblue;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 1;
+}
+
+.title-projects-view {
+  text-align: center;
+  padding-top: 150px;
+  margin-bottom: 60px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .img-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 150px;
-  justify-items: center;
+  padding: 50px 150px;
 }
 
+section {
+  height: 500px;
+}
+
+.projects-thumb {
+  opacity: 0;
+  transform: translateX(-80px);
+  visibility: hidden;
+}
+
+.projects-thumb.right {
+    opacity: 0;
+    transform: translateX(80px);
+    visibility: hidden;
+}
 
 .card-project {
-
-  margin-bottom: 100px;
-
-
+  display: flex;
+  align-items: center;
 }
 
 .card-project img {
   box-shadow: rgba(114, 120, 126, 0.1) 0px 0px 24px;
+  margin-right: 40px;
 }
 
-.card-project h4 {
+.scroll-text.left{
+  text-align: left;
+}
+
+.scroll-text {
+  margin-right: 60px;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+}
+
+.bloctext1 {
+  margin-right: 60px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+
+}
+
+.card-project h2 {
   margin-top: 10px;
   margin-bottom: 3px;
 }
@@ -195,6 +236,16 @@ visibility: hidden; */
 .card-project p {
   margin-top: 0px;
 }
+
+.specifications {
+  margin-bottom: 8px;
+}
+.card-legend {
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+
 
 /* AUDIOPLAYER */
 

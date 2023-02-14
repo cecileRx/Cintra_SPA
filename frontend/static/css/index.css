@@ -82,7 +82,7 @@ p {
 }
 
  #calque_1 {
-  /* visibility: hidden; */
+  visibility: hidden;
   overflow: visible !important;
 }
 
@@ -100,15 +100,17 @@ area {
   outline-color: white;
 }
 
-
+.particule, #calque_1 a , .contact-link{
+  will-change: transform;
+}
 /* ABOUT VIEW */
 
 #atom {
 position : fixed;
 left: 60px;
 top: 60px;
-/* opacity: 0;
-visibility: hidden; */
+opacity: 0;
+visibility: hidden;
 }
 
 .back-home {

@@ -110,6 +110,7 @@ function animHome() {
     autoAlpha: 1
   })
   gsap.to('#calque_1', {
+    autoAlpha: 1,
     duration: 1,
     scale: 0.95,
   });
@@ -119,11 +120,10 @@ function animHome() {
     x: "random(-200, 200, 5)",
     repeat: -1
   });
-  TweenMax.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
-  TweenMax.to('#calque_1 .projects-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
-  TweenMax.to('#calque_1 .about-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
-  TweenMax.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '95% 25%' });
-
+  gsap.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
+  gsap.to('#calque_1 .projects-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
+  gsap.to('#calque_1 .about-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
+  gsap.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '95% 25%' });
 };
 
 
@@ -230,10 +230,15 @@ function explode(x_center, Y_center) {
 
 function backHome(){
   const backHome = document.querySelector('.atom-link')
+  gsap.to("#atom", 30, { rotation: '+=360', repeat: -1, transformOrigin: '50% 50%' });
   backHome.addEventListener("click", e => {
-    const target = e.currentTarget.href.baseVal;
+    gsap.to("#atom", 2, { opacity : 0});
+    gsap.to("#about-container", 2, { opacity : 0});
     e.preventDefault();
-    navigateTo(target);
+    const target = e.currentTarget.href.baseVal;
+    setTimeout(function () {
+      navigateTo(target);
+    }, 1500);
   });
 };
 
@@ -261,7 +266,9 @@ function animAbout() {
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 function animFirstBlock(){
+  gsap.to(atom, { autoAlpha: 1 });
 
   const firstBlockImage = document.querySelector('img.bloc1');
   const firstBlockText = document.querySelector('.bloctext1');

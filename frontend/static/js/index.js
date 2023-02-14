@@ -113,6 +113,17 @@ function animHome() {
     duration: 1,
     scale: 0.95,
   });
+  gsap.to('.particule', {
+    duration: 200,
+    y: "random(-200,200, 5)",
+    x: "random(-200, 200, 5)",
+    repeat: -1
+  });
+  TweenMax.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
+  TweenMax.to('#calque_1 .projects-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
+  TweenMax.to('#calque_1 .about-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
+  TweenMax.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '95% 25%' });
+
 };
 
 
@@ -121,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     window.onload = animHome();
   }
 });
-
 
 
 function animLinksHome() {
@@ -160,10 +170,6 @@ function animLinksHome() {
     });
   }
 }
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -255,34 +261,6 @@ function animAbout() {
 
 gsap.registerPlugin(ScrollTrigger);
 
-// function circleMouse() {
-//   gsap.set(".ball", { xPercent: -50, yPercent: -50 });
-
-//   const ball = document.querySelector(".ball");
-//   const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-//   const mouse = { x: pos.x, y: pos.y };
-//   const speed = 0.2;
-
-//   const xSet = gsap.quickSetter(ball, "x", "px");
-//   const ySet = gsap.quickSetter(ball, "y", "px");
-
-//   window.addEventListener("mousemove", e => {
-//     mouse.x = e.x;
-//     mouse.y = e.y;
-//   });
-
-//   gsap.ticker.add(() => {
-
-//     // adjust speed for higher refresh monitors
-//     const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
-
-//     pos.x += (mouse.x - pos.x) * dt;
-//     pos.y += (mouse.y - pos.y) * dt;
-//     xSet(pos.x);
-//     ySet(pos.y);
-//   });
-// };
-
 function animFirstBlock(){
 
   const firstBlockImage = document.querySelector('img.bloc1');
@@ -343,26 +321,6 @@ function animFirstBlock(){
   })
 
 }
-
-
-
-
-// function animCardProject() {
-//   const cardProject = document.querySelectorAll('.card-project img')
-
-//   gsap.utils.toArray(cardProject).forEach(el => {
-//     console.log("element", el)
-
-//     let animation = gsap.fromTo(el, { scale: 1 }, {
-//       scale: 1.01,
-//       stagger: 0.08,
-//       paused: true
-//     });
-//     el.addEventListener("mouseover", () => animation.play());
-//     el.addEventListener("mouseout", () => animation.reverse());
-//   });
-// };
-
 
 // AUDIOPLAYER
 

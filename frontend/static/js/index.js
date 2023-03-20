@@ -4,6 +4,7 @@ import Projects from "./views/Projects.js";
 import ProjectView from "./views/ProjectView.js";
 import Contact from "./views/Contact.js";
 
+// ROUTER CONFIGURATION
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -53,40 +54,46 @@ const router  = async () => {
 
 window.addEventListener("popstate",router);
 
-function checkURLchange() {
-  // ATTENTION SEULEMNT EN DEVELOPPEMENT!!!!!!!!!!!!!!!!!!!!
-  var devHomePath = "http://localhost:3000/"
-  var devAboutPath = "http://localhost:3000/about"
-  var devProjectsPath = "http://localhost:3000/projects"
 
-  var newURL = window.location.href
+function checkURLchange() {
+
+  var homePath ="/"
+  var aboutPath = "/about"
+  var projectsPath = "/projects"
+  var newURL = window.location.pathname
+
   if (newURL != oldURL) {
-    console.log(newURL);
+
     oldURL = newURL;
     setInterval(checkURLchange, 0);
-    if (newURL === devHomePath) {
+
+    if (newURL === homePath) {
       animHome();
       animLinksHome();
-    } else if (newURL === devAboutPath) {
+    } else if (newURL === aboutPath) {
       animAbout();
       backHome();
 
-    } else if (newURL === devProjectsPath) {
+    } else if (newURL === projectsPath) {
       animFirstBlock();
       backHome();
     }
   }
 }
 
-var oldURL = window.location.href;
+var oldURL = window.location.pathname;
 setInterval(checkURLchange, 1000);
+setInterval(checkURL, 1000);
 
+function checkURL() {
+  return window.location.pathname;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   router();
 });
 
-// VIEWS NAVIGATION
+// NAVIGATION TO VIEWS
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', e => {
@@ -99,6 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
   router();
 })
 
+// BACKHOME FOR ALL VIEWS
+
+function backHome() {
+  const backHome = document.querySelector('.atom-link')
+  gsap.to("#atom", 30, { rotation: '+=360', repeat: -1, transformOrigin: '50% 50%' });
+  backHome.addEventListener("click", e => {
+    gsap.to("#atom", 2, { opacity: 0 });
+    gsap.to("#about-container", 2, { opacity: 0 });
+    gsap.to(".img-container", 1, { opacity: 0 });
+    gsap.to('hr', { x: 1000, duration: 1 });
+    gsap.to('.title-projects-view', 1, { opacity: 0 });
+    e.preventDefault();
+    const target = e.currentTarget.href.baseVal;
+    setTimeout(function () {
+      navigateTo(target);
+    }, 1500);
+  });
+};
 
 
 // MENU
@@ -114,6 +139,14 @@ function animHome() {
     duration: 1,
     scale: 0.95,
   });
+  gsap.to('.signature p', {
+    autoAlpha: 1,
+    duration: 1.3
+  })
+  gsap.to('.signature h3', {
+    autoAlpha: 1,
+    duration: 2
+  })
   gsap.to('.particule', {
     duration: 200,
     y: "random(-200,200, 5)",
@@ -127,11 +160,17 @@ function animHome() {
 };
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   if (location.pathname === "/") {
     window.onload = animHome();
+    animLinksHome();
+  } else if (location.pathname === "/about") {
+    window.onload = animAbout();
+  } else if (location.pathname === "/projects") {
+    window.onload = animFirstBlock();
   }
 });
+
 
 
 function animLinksHome() {
@@ -171,10 +210,6 @@ function animLinksHome() {
   }
 }
 
-
-document.addEventListener("DOMContentLoaded", function (event) {
-  animLinksHome();
-});
 
 function explode(x_center, Y_center) {
   TweenLite.defaultEase = Linear.easeNone;
@@ -223,24 +258,8 @@ function explode(x_center, Y_center) {
     var dy = p2.y - p1.y;
     return Math.sqrt(dx * dx + dy * dy);
   }
-
 }
 
-// BACKHOME FOR ALL VIEWS
-
-function backHome(){
-  const backHome = document.querySelector('.atom-link')
-  gsap.to("#atom", 30, { rotation: '+=360', repeat: -1, transformOrigin: '50% 50%' });
-  backHome.addEventListener("click", e => {
-    gsap.to("#atom", 2, { opacity : 0});
-    gsap.to("#about-container", 2, { opacity : 0});
-    e.preventDefault();
-    const target = e.currentTarget.href.baseVal;
-    setTimeout(function () {
-      navigateTo(target);
-    }, 1500);
-  });
-};
 
 //ABOUT VIEW
 
@@ -277,7 +296,8 @@ function animFirstBlock(){
   const TL = gsap.timeline();
 
   TL
-    .to(title, {autoAlpha: 1, duration: 0.3})
+    .to('hr', { x: 0, duration: 0.5 })
+    .to(title, { autoAlpha: 1, duration: 0.3 }, '-=0.55')
     .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.55')
     .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
 
@@ -326,8 +346,8 @@ function animFirstBlock(){
       }
     });
   })
-
 }
+
 
 // AUDIOPLAYER
 

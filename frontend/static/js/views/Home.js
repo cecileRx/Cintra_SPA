@@ -3128,7 +3128,7 @@ export default class extends AbstractView {
     </div>
     <div class="title">
       <div class="signature">
-          <h2>Miguel Cintra</h2>
+          <h3>Miguel Cintra</h3>
           <p>sound designer . composer . music producer</p>
       </div>
       <div class="contact">

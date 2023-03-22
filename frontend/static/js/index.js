@@ -83,11 +83,11 @@ function checkURLchange() {
 
 var oldURL = window.location.pathname;
 setInterval(checkURLchange, 1000);
-setInterval(checkURL, 1000);
+// setInterval(checkURL, 1000);
 
-function checkURL() {
-  return window.location.pathname;
-}
+// function checkURL() {
+//   return window.location.pathname;
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
   router();
@@ -161,6 +161,7 @@ function animHome() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log('document content loaded')
   if (location.pathname === "/") {
     window.onload = animHome();
     animLinksHome();

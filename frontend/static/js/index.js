@@ -163,12 +163,12 @@ function animHome() {
 document.addEventListener("DOMContentLoaded", function () {
   console.log('document content loaded')
   if (location.pathname === "/") {
-    window.onload = animHome();
+    animHome();
     animLinksHome();
   } else if (location.pathname === "/about") {
-    window.onload = animAbout();
+     animAbout();
   } else if (location.pathname === "/projects") {
-    window.onload = animFirstBlock();
+    animFirstBlock();
   }
 });
 

@@ -110,10 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function backHome() {
   const backHome = document.querySelector('.atom-link')
-  gsap.to("#atom", 30, { rotation: '+=360', repeat: -1, transformOrigin: '50% 50%' });
+  // gsap.to("#atom", 30, { rotation: '+=360', repeat: -1, transformOrigin: '50% 50%' });
   backHome.addEventListener("click", e => {
     gsap.to("#atom", 2, { opacity: 0 });
     gsap.to("#about-container", 2, { opacity: 0 });
+    gsap.to('.about-title', 1, { opacity: 0 });
     gsap.to(".img-container", 1, { opacity: 0 });
     gsap.to('hr', { x: 1000, duration: 1 });
     gsap.to('.title-projects-view', 1, { opacity: 0 });
@@ -267,19 +268,28 @@ function explode(x_center, Y_center) {
 function animAbout() {
 
   const atom = document.querySelector('#atom');
-  const aboutTitle = document.querySelector('.about-title');
+  // const aboutTitle = document.querySelector('.about-title');
+  const animatedTitle = document.querySelector('.animated_title');
   const aboutText1 = document.querySelector('.about-prem');
   const aboutText2 = document.querySelector('.about-text_2');
   const aboutText3 = document.querySelector('.about-text_3');
+  const aboutText4 = document.querySelector('.about-text_4');
+  const aboutImg = document.querySelector('.about-img');
+
 
   const TL = gsap.timeline();
 
   TL
     .to(atom, { autoAlpha: 1 })
-    .to(aboutTitle, { autoAlpha: 1, duration: 1 }, '-=0.75')
+    .to(animatedTitle, { x: 0, duration: 0.5 })
+    .to(aboutImg, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.85')
+    // .to(title, { autoAlpha: 1, duration: 0.3 }, '-=0.55')
+    // .to(aboutTitle, { autoAlpha: 1, duration: 1 }, '-=0.75')
     .to(aboutText1, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
     .to(aboutText2, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
     .to(aboutText3, { autoAlpha: 1, y: 0, duration: 1 },'-=0.55')
+    .to(aboutText4, { autoAlpha: 1, y: 0, duration: 1 },'-=0.75')
+
 }
 
 // PROJECTS VIEW
@@ -293,11 +303,14 @@ function animFirstBlock(){
   const firstBlockImage = document.querySelector('img.bloc1');
   const firstBlockText = document.querySelector('.bloctext1');
   const title = document.querySelector('.title-projects-view');
+  const animatedTitle = document.querySelector('.animated_title');
 
   const TL = gsap.timeline();
 
   TL
-    .to('hr', { x: 0, duration: 0.5 })
+
+    .to(atom, { autoAlpha: 1 })
+    .to(animatedTitle, { x: 0, duration: 0.5 })
     .to(title, { autoAlpha: 1, duration: 0.3 }, '-=0.55')
     .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.55')
     .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
@@ -310,7 +323,7 @@ function animFirstBlock(){
       autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
         trigger: el,
         start: "top-=100 center+=200",
-        toggleActions: "play pause resume reverse"
+        toggleActions: "play pause resume"
       }
     })
   })
@@ -319,8 +332,8 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
-        start: "top-=150% center",
-        toggleActions: "play pause resume reverse"
+        start: "top-=120 center",
+        toggleActions: "play pause resume"
       }
     });
   })
@@ -333,7 +346,7 @@ function animFirstBlock(){
       autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
         trigger: el,
         start: "top-=140 center+=200",
-        toggleActions: "play pause resume reverse"
+        toggleActions: "play pause resume"
       }
     })
   })
@@ -343,7 +356,7 @@ function animFirstBlock(){
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
         start: "top-=120% center",
-        toggleActions: "play pause resume reverse"
+        toggleActions: "play pause resume"
       }
     });
   })

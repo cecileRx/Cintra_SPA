@@ -8,9 +8,11 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-<svg id="atom" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.84 25.82"  witdh="50px" height="50px" xml:space="preserve">
+<div class= "title_container">
+
+<svg id="atom" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.84 25.82"  witdh="80px" height="80px" xml:space="preserve">
 <a class='atom-link' href="/" data-link>
-<rect  x="5" y="0" fill="white" opacity="0" width="30px" height="50px"></rect>
+<rect  x="5" y="0" fill="white" opacity="0" width="80px" height="190px"></rect>
 </a>
 <defs>
 
@@ -256,37 +258,24 @@ export default class extends AbstractView {
     </g>
   </g>
 </svg>
+
+ <div class="animated_title"><h2 class="about-title">About Miguel</h2><hr/></div>
+ </div>
  <div id="about-container">
-      <h2 class="about-title">About Miguel</h2>
+      <img class="about-img" src="../../../static/images/Miguel_Cintra.jpg" >
+
       <div class="about-text">
-      <p class="about-prem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque nisi et alias totam
-        exercitationem facilis fugiat nulla deserunt expedita aliquid, impedit doloremque at eveniet
-        similique nobis neque repellendus temporibus perferendis?</p>
-      <p class="about-text_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, doloribus minus,
-        voluptates
-        non minima odio optio, quam dicta earum necessitatibus aliquid a excepturi facilis accusantium voluptatem aperiam
-        tenetur esse repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aspernatur cumque officiis
-        autem atque, nulla ut? Voluptatum assumenda aliquam rem dolores id nulla laborum? Vero eligendi impedit quasi
-        dolores
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nisi, vitae enim non repellat, earum, eos optio ab
-        labore similique culpa perferendis natus! Qui officiis quo earum exercitationem commodi ea! Lorem ipsum dolor sit
-        amet
-        consectetur adipisicing elit. Cupiditate voluptas exercitationem ea, quod dolorem voluptatum eligendi, facilis
-        veritatis voluptate ipsa recusandae? Fugiat dolor molestiae explicabo culpa distinctio dolorum earum porro?</p>
-        <p class="about-text_3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, doloribus minus,
-        voluptates
-        non minima odio optio, quam dicta earum necessitatibus aliquid a excepturi facilis accusantium voluptatem aperiam
-        tenetur esse repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aspernatur cumque officiis
-        autem atque, nulla ut? Voluptatum assumenda aliquam rem dolores id nulla laborum? Vero eligendi impedit quasi
-        dolores
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nisi, vitae enim non repellat, earum, eos optio ab
-        labore similique culpa perferendis natus! Qui officiis quo earum exercitationem commodi ea! Lorem ipsum dolor sit
-        amet
-        consectetur adipisicing elit. Cupiditate voluptas exercitationem ea, quod dolorem voluptatum eligendi, facilis
-        veritatis voluptate ipsa recusandae? Fugiat dolor molestiae explicabo culpa distinctio dolorum earum porro?</p>
-    </div>
+        <p class="about-prem">Miguel Cintra is a composer, sound designer and music producer, with over 10 years of professional experience in the videogame industry. Currently working as a senior audio designer for Wordwall, he delivered music and sound for many different titles and for multiple gaming platforms.</p>
+        <p class="about-text_2">
+           Miniclip trusted him to design sounds for their top-grossing title 8-Ball Pool, and he crafted music and sound effects for companies such as Peak and Inspired, to name a few.
+        </p>
+        <p class="about-text_3" >He co-founded an indie company, Tio Atum, with whom he released Greedy Guns, a “kickstarted” metroidvania shooter for PC. He was responsible for all the music and sound design in the Fun Punch PS4 awarded game, Strikers Edge, and for the Digitality zombie side-scroller shooter, Hordecore, with Marcos Ferreira. He also did all the sound design for the Zarc Attack retro sci-fi first-person shooter, Exophobia.
+        </p>
+        <p class="about-text_4">As a speaker, he presented his game-audio concepts at multiple events, such as Play Festival in Hamburg, 4Gamers and GameDev Camp in Lisbon and he has been teaching sound design and music production in various schools and projects.
+        </p>
     </div>
 
+ </div>
     `;
   }
 }

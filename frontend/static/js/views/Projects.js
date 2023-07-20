@@ -270,16 +270,18 @@ export default class extends AbstractView {
               <h2>Exophobia</h2>
               <p class="specifications">PC . sfx</p>
               <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab, minus fuga explicabo quibusdam </p>
+              <a href="/projects/1">LINK TO VIDEO</a>
           </div>
         </section>
 
         <section class="card-project ">
+          <img class="projects-thumb right klutz bloc2" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
           <div class="scroll-text left bloctext1">
             <h2>Agent_Klutz</h2>
             <p class="specifications">PC . Music & sfx</p>
             <p class="card-legend">Fugiat dignissimos neque, voluptate ab,minus fuga explicabo quibusdam </p>
           </div>
-          <img class="projects-thumb right klutz bloc2" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
+
         </section>
 
         <section class="card-project">
@@ -292,12 +294,13 @@ export default class extends AbstractView {
         </section>
 
         <section class="card-project">
+          <img class="projects-thumb right" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
           <div class="scroll-text left bloctext1">
             <h2>8 Ball Pool</h2>
             <p class="specifications">Online, Mobile</p>
             <p class="card-legend">Sound design for the top-grossing Miniclip game. World's #1 Pool game. </p>
+            <a href="/projects/4">VIEW VIDEO</a>
           </div>
-          <img class="projects-thumb right" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
         </section>
 
         <section class="card-project">
@@ -310,12 +313,12 @@ export default class extends AbstractView {
           </div>
         </section>
         <section class="card-project">
+          <img class="projects-thumb right" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
           <div class="scroll-text left bloctext1">
           <h2>Strikers Edge</h2>
           <p class="specifications">PC and PS4</p>
           <p class="card-legend">Soundtrack and sound design. Awarded as the best game in 2017, by Playstation awards. </p>
           </div>
-          <img class="projects-thumb right" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
         </section>
 
         <section class="card-project">

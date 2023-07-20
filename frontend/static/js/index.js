@@ -60,6 +60,7 @@ function checkURLchange() {
   var homePath ="/"
   var aboutPath = "/about"
   var projectsPath = "/projects"
+  var contactPath = "/contact"
   var newURL = window.location.pathname
 
   if (newURL != oldURL) {
@@ -76,6 +77,10 @@ function checkURLchange() {
 
     } else if (newURL === projectsPath) {
       animFirstBlock();
+      backHome();
+
+    } else if (newURL === contactPath) {
+      animContact();
       backHome();
     }
   }
@@ -262,6 +267,19 @@ function explode(x_center, Y_center) {
   }
 }
 
+//CONTACT VIEW
+
+function animContact() {
+
+  const atom = document.querySelector('#atom');
+
+  const TL = gsap.timeline();
+
+  TL
+    .to(atom, { autoAlpha: 1 })
+
+
+}
 
 //ABOUT VIEW
 
@@ -332,7 +350,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
-        start: "top-=120 center",
+        start: "top-=10",
         toggleActions: "play pause resume"
       }
     });
@@ -345,7 +363,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
         trigger: el,
-        start: "top-=140 center+=200",
+        start: "top=10 ",
         toggleActions: "play pause resume"
       }
     })
@@ -355,7 +373,7 @@ function animFirstBlock(){
     gsap.to(el, {
       autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
         trigger: el,
-        start: "top-=120% center",
+        start: "top=10%",
         toggleActions: "play pause resume"
       }
     });

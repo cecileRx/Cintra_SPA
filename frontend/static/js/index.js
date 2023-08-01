@@ -318,66 +318,25 @@ gsap.registerPlugin(ScrollTrigger);
 function animFirstBlock(){
   gsap.to(atom, { autoAlpha: 1 });
 
-  const firstBlockImage = document.querySelector('img.bloc1');
-  const firstBlockText = document.querySelector('.bloctext1');
+  const firstBlockImage = document.querySelectorAll('.card-project img');
+  const blocText = document.querySelectorAll('.bloctext');
   const title = document.querySelector('.title-projects-view');
   const animatedTitle = document.querySelector('.animated_title');
 
-  const TL = gsap.timeline();
+  gsap.to(animatedTitle, { x: 0, duration: 0.5 })
 
-  TL
-
-    .to(atom, { autoAlpha: 1 })
-    .to(animatedTitle, { x: 0, duration: 0.5 })
-    .to(title, { autoAlpha: 1, duration: 0.3 }, '-=0.55')
-    .to(firstBlockImage, { autoAlpha: 1, x: 0, duration: 0.7 }, '-=0.55')
-    .to(firstBlockText, { autoAlpha: 1, y: 0, duration: 1 }, '-=0.75')
-
-  const revealFromLeftImage = document.querySelectorAll('img.reveal_from_left');
-  const revealFromLeftText = document.querySelectorAll('.scroll-text.reveal_from_left');
-
-  revealFromLeftText.forEach(el => {
+  firstBlockImage.forEach(el => {
     gsap.to(el, {
-      autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
-        trigger: el,
-        start: "top-=100 center+=200",
-        toggleActions: "play pause resume"
-      }
+         autoAlpha: 1, x: 0, duration: 0.7
+      })
+     })
+
+  blocText.forEach(el => {
+    gsap.to(el, {
+      autoAlpha: 1, duration: 0.8
     })
   })
 
-  revealFromLeftImage.forEach(el => {
-    gsap.to(el, {
-      autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
-        trigger: el,
-        start: "top-=10",
-        toggleActions: "play pause resume"
-      }
-    });
-  })
-
-  const revealFromRightImage = document.querySelectorAll('.projects-thumb.right');
-  const revealFromRightText = document.querySelectorAll('.scroll-text');
-
-  revealFromRightText.forEach(el => {
-    gsap.to(el, {
-      autoAlpha: 1, y: 0, duration: 1, scrollTrigger: {
-        trigger: el,
-        start: "top=10 ",
-        toggleActions: "play pause resume"
-      }
-    })
-  })
-
-  revealFromRightImage.forEach(el => {
-    gsap.to(el, {
-      autoAlpha: 1, x: 0, duration: 0.7, scrollTrigger: {
-        trigger: el,
-        start: "top=10%",
-        toggleActions: "play pause resume"
-      }
-    });
-  })
 }
 
 

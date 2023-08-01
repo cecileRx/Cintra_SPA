@@ -266,7 +266,7 @@ export default class extends AbstractView {
 
         <section class="card-project first-card">
           <img class="projects-thumb bloc1" src="static/images/Projects_thumb/Exophobia.jpg" alt="">
-          <div class=" left bloctext1">
+          <div class=" bloctext">
               <h2>Exophobia</h2>
               <p class="specifications">PC . sfx</p>
               <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab, minus fuga explicabo quibusdam </p>
@@ -274,9 +274,9 @@ export default class extends AbstractView {
           </div>
         </section>
 
-        <section class="card-project ">
-          <img class="projects-thumb right klutz bloc2" src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
-          <div class="scroll-text left bloctext1">
+        <section class="card-project first-card">
+          <img class="projects-thumb " src="static/images/Projects_thumb/Agent_Klutz.png" alt="">
+          <div class="bloctext">
             <h2>Agent_Klutz</h2>
             <p class="specifications">PC . Music & sfx</p>
             <p class="card-legend">Fugiat dignissimos neque, voluptate ab,minus fuga explicabo quibusdam </p>
@@ -286,7 +286,7 @@ export default class extends AbstractView {
 
         <section class="card-project">
           <img class="projects-thumb reveal_from_left bloc3" src="static/images/Projects_thumb/Greedy_Guns.jpg" alt="">
-          <div class="scroll-text reveal_from_left left bloc3">
+          <div class="bloctext">
             <h2>Greedy Guns</h2>
             <p class="specifications">PC and Mac</p>
             <p class="card-legend">Soundtrack and sound design. Awarded as the best Portuguese game in 2017, by Foxbyte. The game was crowdfunded on Kickstarter. </p>
@@ -295,7 +295,7 @@ export default class extends AbstractView {
 
         <section class="card-project">
           <img class="projects-thumb right" src="static/images/Projects_thumb/8BallPool.jpg" alt="8 Ball Pool">
-          <div class="scroll-text left bloctext1">
+          <div class="bloctext">
             <h2>8 Ball Pool</h2>
             <p class="specifications">Online, Mobile</p>
             <p class="card-legend">Sound design for the top-grossing Miniclip game. World's #1 Pool game. </p>
@@ -305,7 +305,7 @@ export default class extends AbstractView {
 
         <section class="card-project">
           <img class="projects-thumb reveal_from_left" src="static/images/Projects_thumb/Greedy_Guns_Scream.png" alt="">
-          <div class="scroll-text reveal_from_left left">
+          <div class="bloctext">
           <h2>Greedy Guns Scream</h2>
           <p class="specifications">PC. sfx</p>
           <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
@@ -314,7 +314,7 @@ export default class extends AbstractView {
         </section>
         <section class="card-project">
           <img class="projects-thumb right" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
-          <div class="scroll-text left bloctext1">
+          <div class="bloctext">
           <h2>Strikers Edge</h2>
           <p class="specifications">PC and PS4</p>
           <p class="card-legend">Soundtrack and sound design. Awarded as the best game in 2017, by Playstation awards. </p>
@@ -323,7 +323,7 @@ export default class extends AbstractView {
 
         <section class="card-project">
           <img class="projects-thumb reveal_from_left" src="static/images/Projects_thumb/Hordecore.png" alt="">
-          <div class="scroll-text reveal_from_left left">
+          <div class="bloctext">
           <h2>Hordecore</h2>
           <p class="specifications">PC</p>
           <p class="card-legend">Soundtrack and sound design, with Marcos Ferreira. Awarded as the best Portuguese game in 2022, by Indie X.</p>

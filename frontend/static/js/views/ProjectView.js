@@ -21,10 +21,11 @@ export default class extends AbstractView {
     console.log(media.url_link)
 
     return `
+
       <div class="video-project">
         <h2 class="video-project-title"> ${media.name} </h2>
         <div class="video-container">
-          <iframe src=${media.url_src} style="margin-right: 1%; margin-left: 1%;" width="98%" height=""  title=${media.url_title}
+          <iframe src="https://www.youtube.com/embed/XUi580gA5BQ" style="margin-right: 1%; margin-left: 1%;" width="98%" height=""  title=${media.url_title}
         frameborder="0" allowfullscreen></iframe>
          </div>
         <p class="video-description">${media.url_description}</p>

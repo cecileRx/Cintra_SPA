@@ -17,7 +17,8 @@ export default class extends AbstractView {
 
     function filterById(jsonObject, id) { return jsonObject.filter(function (jsonObject) { return (jsonObject['id'] == id); })[0]; }
 
-   
+    let media = filterById(mediaList, this.params.id);
+
     console.log(media.url_link)
 
     return `

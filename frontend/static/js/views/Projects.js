@@ -270,7 +270,7 @@ export default class extends AbstractView {
               <h2>Exophobia</h2>
               <p class="specifications">PC . sfx</p>
               <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab, minus fuga explicabo quibusdam </p>
-              <a href="/projects/1">LINK TO VIDEO</a>
+              <a href=""https://www.youtube.com/embed/XUi580gA5BQ"">LINK TO VIDEO</a>
           </div>
         </section>
 

@@ -299,7 +299,7 @@ export default class extends AbstractView {
             <h2>8 Ball Pool</h2>
             <p class="specifications">Online, Mobile</p>
             <p class="card-legend">Sound design for the top-grossing Miniclip game. World's #1 Pool game. </p>
-            <a href="https://www.youtube.com/embed/L88roY6ov0Q">VIEW VIDEO</a>
+            <a href="/projects/1">VIEW VIDEO</a>
           </div>
         </section>
 

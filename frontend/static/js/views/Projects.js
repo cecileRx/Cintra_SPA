@@ -270,7 +270,7 @@ export default class extends AbstractView {
               <h2>Exophobia</h2>
               <p class="specifications">PC . sfx</p>
               <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab, minus fuga explicabo quibusdam </p>
-              <a href="https://www.youtube.com/watch?v=XUi580gA5BQ">LINK TO VIDEO</a>
+              <a href="/projects/1">WATCH THE VIDEO</a>
           </div>
         </section>
 
@@ -280,6 +280,7 @@ export default class extends AbstractView {
             <h2>Agent_Klutz</h2>
             <p class="specifications">PC . Music & sfx</p>
             <p class="card-legend">Fugiat dignissimos neque, voluptate ab,minus fuga explicabo quibusdam </p>
+            <a href="/projects/2">WATCH THE VIDEO</a>
           </div>
 
         </section>
@@ -289,7 +290,8 @@ export default class extends AbstractView {
           <div class="bloctext">
             <h2>Greedy Guns</h2>
             <p class="specifications">PC and Mac</p>
-            <p class="card-legend">Soundtrack and sound design. Awarded as the best Portuguese game in 2017, by Foxbyte. The game was crowdfunded on Kickstarter. </p>
+            <p class="card-legend">Soundtrack and sound design. Awarded as the best Portuguese game in 2017, by Foxbyte. The game was crowdfunded on Kickstarter.</p>
+            <a href="/projects/3">WATCH THE VIDEO</a>
           </div>
         </section>
 
@@ -299,7 +301,7 @@ export default class extends AbstractView {
             <h2>8 Ball Pool</h2>
             <p class="specifications">Online, Mobile</p>
             <p class="card-legend">Sound design for the top-grossing Miniclip game. World's #1 Pool game. </p>
-            <a href="/projects/1">VIEW VIDEO</a>
+            <a href="/projects/4">VIEW VIDEO</a>
           </div>
         </section>
 
@@ -310,14 +312,17 @@ export default class extends AbstractView {
           <p class="specifications">PC. sfx</p>
           <p class="card-legend">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat dignissimos neque, voluptate ab,
             minus fuga explicabo quibusdam </p>
+          <a href="/projects/5">WATCH THE VIDEO</a>
           </div>
         </section>
+
         <section class="card-project">
           <img class="projects-thumb right" src="static/images/Projects_thumb/Strikers_Edge.png" alt="">
           <div class="bloctext">
-          <h2>Strikers Edge</h2>
-          <p class="specifications">PC and PS4</p>
-          <p class="card-legend">Soundtrack and sound design. Awarded as the best game in 2017, by Playstation awards. </p>
+            <h2>Strikers Edge</h2>
+            <p class="specifications">PC and PS4</p>
+            <p class="card-legend">Soundtrack and sound design. Awarded as the best game in 2017, by Playstation awards. </p>
+            <a href="/projects/6">WATCH THE VIDEO</a>
           </div>
         </section>
 
@@ -327,6 +332,7 @@ export default class extends AbstractView {
           <h2>Hordecore</h2>
           <p class="specifications">PC</p>
           <p class="card-legend">Soundtrack and sound design, with Marcos Ferreira. Awarded as the best Portuguese game in 2022, by Indie X.</p>
+          <a href="/projects/7">WATCH THE VIDEO</a>
           </div>
         </section>
         <p></p>

@@ -13,19 +13,19 @@ export default class extends AbstractView {
        <div id="molecule">
 
 
-        <svg version="1.1" id="calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-          y="0px" viewBox="0 0 200.05 131.14" witdh="550px" height="550px" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+        <svg version="1.1" id="calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10px"
+          y="200px" viewBox="0 0 200.05 131.14" width="100%" style="enable-background:new 0 0 150 150;" xml:space="preserve">
           <a class='molecule-link about-link' href="/about" data-link>
             <rect id="about-link" x="3" y="5" fill="#fff" opacity="0" width="30" height="30"></rect>
             <text x="35" y="20" font-family="Oswald" opacity="100" font-size="0.4rem" fill="#28ABE2">About</text>
           </a>
           <a class='molecule-link projects-link' href="/projects" data-link>
-            <rect id="projects-link" x="80" y="57" fill="blue" opacity="0" width="50" height="40"></rect>
+            <rect id="projects-link" x="80" y="57" fill="blue" opacity="0" width="30" height="30"></rect>
             <text x="118" y="93"  font-family="Oswald" opacity="10" font-size="0.4rem" fill="#28ABE2">Projects</text>
           </a>
           <a class='molecule-link contact-link' href="/contact" data-link>
-            <rect id="contact-link" x="0" y="100" fill="red" opacity="0" width="30" height="100"></rect>
-            <text x="33" y="120" font-family="Oswald" opacity="10" font-size="0.4rem" fill="#28ABE2">Contact</text>
+            <rect id="contact-link" x="0" y="100" fill="red" opacity="0" width="45" height="35"></rect>
+            <text x="29" y="130" font-family="Oswald" opacity="10" font-size="0.4rem" fill="#28ABE2">Contact</text>
           </a>
           <style type="text/css">
             .st0 {

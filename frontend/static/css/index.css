@@ -121,7 +121,6 @@ p {
 
 .social-media {
   text-align: right;
-
 }
 
 .fa-brands {
@@ -134,21 +133,26 @@ p {
 #molecule {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
  #calque_1 {
   visibility: hidden;
   overflow: visible !important;
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+  height: 60%;
 }
 
  #calque_1 a {
   opacity: 0;
 }
 
-#molecule svg {
-  margin: 0 auto;
-  display: block;
+svg#calque_1 {
+  /* margin: 30 100 !important;
+  display: block; */
 }
 
 area {

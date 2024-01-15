@@ -162,7 +162,7 @@ function animHome() {
   gsap.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
   gsap.to('#calque_1 .projects-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
   gsap.to('#calque_1 .about-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
-  gsap.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '95% 25%' });
+  gsap.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '70% 45%' });
 };
 
 

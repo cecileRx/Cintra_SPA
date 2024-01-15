@@ -410,3 +410,4 @@ play.addEventListener('click', () => {
     play.classList.remove("playing");
   }
 });
+

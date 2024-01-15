@@ -19,14 +19,32 @@ export default class extends AbstractView {
 
     let media = filterById(mediaList, this.params.id);
 
+    function hideAudioContainer() {
+      const hiddenDiv = document.querySelector('.audio-container');
+      hiddenDiv.style.display = 'none'
+    }
+
+    hideAudioContainer();
+
     console.log(media.url_link)
 
     return `
-      <h1> ${media.name} </h1>
+
+
+      <h1 class="video-name"> ${media.name} </h1>
       <p>
-         <iframe src=${media.url_src} width="560" height="315" title=${media.url_title}
-      frameborder="0" allowfullscreen></iframe>
+         <iframe
+          class="video"
+          src=${media.url_src}
+          title=${media.url_title}
+          description=${media.url_src}
+          frameborder="0"
+          ></iframe>
       </p>
+      <p class="video-description">
+        ${media.url_description}
+      </p>
+
     `;
   }
 }

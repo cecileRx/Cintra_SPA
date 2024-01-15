@@ -19,12 +19,12 @@ export default class extends AbstractView {
 
     let media = filterById(mediaList, this.params.id);
 
-    function hideAudioContainer() {
-      const hiddenDiv = document.querySelector('.audio-container');
-      hiddenDiv.style.display = 'none'
-    }
+    // function hideAudioContainer() {
+    //   const hiddenDiv = document.querySelector('.audio-container');
+    //   hiddenDiv.style.display = 'none'
+    // }
 
-    hideAudioContainer();
+    // hideAudioContainer();
 
     console.log(media.url_link)
 

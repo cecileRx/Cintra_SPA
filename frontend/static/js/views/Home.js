@@ -16,7 +16,7 @@ export default class extends AbstractView {
         <svg version="1.1" id="calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10px"
           y="200px" viewBox="0 0 200.05 131.14" width="100%" style="enable-background:new 0 0 150 150;" xml:space="preserve">
           <a class='molecule-link about-link' href="/about" data-link>
-            <rect id="about-link" x="3" y="5" fill="#fff" opacity="0" width="30" height="30"></rect>
+            <rect id="about-link" x="3" y="5" fill="#fff" opacity="10" width="30" height="30"></rect>
             <text x="35" y="20" font-family="Oswald" opacity="100" font-size="0.4rem" fill="#28ABE2">About</text>
           </a>
           <a class='molecule-link projects-link' href="/projects" data-link>

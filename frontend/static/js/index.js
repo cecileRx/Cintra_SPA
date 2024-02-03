@@ -135,6 +135,13 @@ function backHome() {
 // MENU
 
 function animHome() {
+
+    gsap.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
+    gsap.to('#calque_1 .projects-link', 900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
+    gsap.to('#calque_1 .about-link', 900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
+    gsap.to('#calque_1 .contact-link', 900, { rotation: '-=360', repeat: -1, transformOrigin: '70% 45%' });
+
+
   gsap.to('#calque_1 a', {
     delay: 0.5,
     duration: 2,
@@ -159,15 +166,12 @@ function animHome() {
     x: "random(-200, 200, 5)",
     repeat: -1
   });
-  gsap.to('#calque_1', 900, { rotation: '+=360', repeat: -1, transformOrigin: '30% 50%' });
-  gsap.to('#calque_1 .projects-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '80% 80%' });
-  gsap.to('#calque_1 .about-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '40% 40%' });
-  gsap.to('#calque_1 .contact-link',900, { rotation: '-=360', repeat: -1, transformOrigin: '70% 45%' });
 };
 
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log('document content loaded')
+
   if (location.pathname === "/") {
     animHome();
     animLinksHome();
